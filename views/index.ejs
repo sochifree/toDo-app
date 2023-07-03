@@ -1,0 +1,29 @@
+
+    <%- include('./include/_header.ejs')%>
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Todo app</a>
+        </div>
+      </nav>
+
+      <div class="container mt-5">
+        <form action="/add/todo" method="POST" class="d-flex">
+             <input type="text" name="todo" class="form-control" placeholder="Enter todo" aria-label="Username" aria-describedby="addon-wrapping">
+             <input type="submit" value="Add Todo" class="btn btn-md btn-primary mx-2">
+        </form>
+         
+        <ul class="list-group my-5">
+            <% todo.forEach(todo => { %>
+                <li class="list-group-item"><%= todo  %></li>
+            <% })%>
+            
+            <a href="/" class="list-group-item list-group-item-action">A second link item</a>
+            
+            
+        </ul>
+
+      </div>
+      
+
+    <%- include('./include/_footer.ejs')%>
